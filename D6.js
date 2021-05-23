@@ -47,17 +47,33 @@ console.log(random)
 */
 drawHeader("ex. d")
 
+let me = {
+  name: "André",
+  surname: "Sousa",
+  age: 28,
+}
+console.log(me)
+
 /* Ex.E 
     Programmatically remove the age property from the previously create object.
 */
+drawHeader("ex. e")
+
+delete me.age
+console.log(me)
 
 /* Ex.F 
    Programmatically add to the object me an array called "skills", containing the programming languages you know right now.
 */
+drawHeader("ex. f")
+
+me.skills = ["Javascript", "HTML", "CSS"]
+console.log(me)
 
 /* Ex.G 
    Programmatically remove the last skill from the "skills" array inside the "me" object.
 */
+drawHeader("ex. g")
 
 // JS Functions
 /* Ex.1
