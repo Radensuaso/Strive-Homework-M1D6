@@ -141,10 +141,25 @@ console.log(onlyLetters("What's 18 the time 5?"))
 /* Ex.6 
    Write a function called "isThisAnEmail" which receives a string as a parameter and returns true if the string is a valid email address.
 */
+drawHeader("js functions ex. 6")
+const isThisAnEmail = (email) => {
+  const hasAt = []
+  for (let i = 0; i < email.length; i++) {
+    if (email[i] === "@") {
+      hasAt.push(true)
+    } else {
+      hasAt.push(false)
+    }
+  }
+  return hasAt.includes(true)
+}
+console.log(isThisAnEmail("andre@gmail.com"))
+console.log(isThisAnEmail("andregmail.com"))
 
 /* Ex.7
    Write a function called "whatDayIsIt" that should return the current day of the week.
 */
+drawHeader("js functions ex. 7")
 
 /* Ex.8
     Write a function called "rollTheDices" which receives a number as a parameter.
