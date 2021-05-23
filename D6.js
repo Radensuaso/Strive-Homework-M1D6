@@ -211,6 +211,22 @@ console.log(rollTheDices(6))
 /* Ex.9
    Write a function called "howManyDays" which receives a date as a parameter and should return the number of days passed since that date.
 */
+drawHeader("js functions ex. 9")
+
+const howManyDays = (date) => {
+  const timeStampDate = new Date(date).getTime()
+  const timeStampNow = new Date().getTime()
+  const daysSinceDate = Math.floor((timeStampNow - timeStampDate) / 86400000)
+  if (daysSinceDate === 0) {
+    return `${date} is today.`
+  } else if (daysSinceDate < 0) {
+    return `${date} still didn't arrive, choose a date before today.`
+  } else {
+    return `${daysSinceDate} days have passed since ${date}`
+  }
+}
+
+console.log(howManyDays("July 4 1776"))
 
 /* Ex.10
    Write a function called "isTodayMyBirthday" which should return true if today's your birthday, false otherwise.
