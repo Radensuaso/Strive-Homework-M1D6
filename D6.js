@@ -120,6 +120,13 @@ console.log(
 /* Ex.4
     Write a function called "deleteOne" which receives a string and a boolean as parameters. If the boolean value is true it should return the string without the first letter, otherwise it should remove the last one from it.
 */
+drawHeader("js functions ex. 4")
+
+const deleteOne = (str, bool) =>
+  bool ? str.substring(1) : str.substring(0, str.length - 1)
+
+console.log(deleteOne("Strive School", false))
+console.log(deleteOne("Strive School", true))
 
 /* Ex.5
    Write a function called "onlyLetters" which receives a string as a parameter and returns it removing all the digits.
