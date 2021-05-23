@@ -231,6 +231,14 @@ console.log(howManyDays("July 4 1776"))
 /* Ex.10
    Write a function called "isTodayMyBirthday" which should return true if today's your birthday, false otherwise.
 */
+drawHeader("js functions ex. 10")
+const isTodayMyBirthday = () => {
+  const todayDate = new Date().getDate()
+  const todayMonth = new Date().getMonth()
+  return todayDate === 3 && todayMonth === 7 //My birthday is August 3rd
+}
+
+console.log(isTodayMyBirthday())
 
 // JS Arrays // Objs
 // NOTE: movies array is defined at the end of this file!
