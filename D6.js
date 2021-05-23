@@ -21,7 +21,7 @@ const drawHeader = function (heading) {
 /* Ex.A
    Create a variable called "test" and assign a string to it.
 */
-drawHeader("ex. a")
+drawHeader("js basics ex. a")
 
 let test = "This is a test"
 console.log(test)
@@ -29,7 +29,7 @@ console.log(test)
 /* Ex.B
     Create a variable called "sum" and assign to it the result of the sum between 10 and 20.
 */
-drawHeader("ex. b")
+drawHeader("js basics ex. b")
 
 let sum = 10 + 20
 console.log(sum)
@@ -37,7 +37,7 @@ console.log(sum)
 /* Ex.C 
     Create a variable called "random" and assign to it a random number between 0 and 20 (it should be randomly created at each execution).
 */
-drawHeader("ex. c")
+drawHeader("js basics ex. c")
 
 let random = Math.floor(Math.random() * 21)
 console.log(random)
@@ -45,7 +45,7 @@ console.log(random)
 /* Ex.D
     Create a variable called "me" and assign to it an object containing the following information: name = your name, surname = your surname, age = your age.
 */
-drawHeader("ex. d")
+drawHeader("js basics ex. d")
 
 let me = {
   name: "André",
@@ -57,7 +57,7 @@ console.log(me)
 /* Ex.E 
     Programmatically remove the age property from the previously create object.
 */
-drawHeader("ex. e")
+drawHeader("js basics ex. e")
 
 delete me.age
 console.log(me)
@@ -65,7 +65,7 @@ console.log(me)
 /* Ex.F 
    Programmatically add to the object me an array called "skills", containing the programming languages you know right now.
 */
-drawHeader("ex. f")
+drawHeader("js basics ex. f")
 
 me.skills = ["Javascript", "HTML", "CSS"]
 console.log(me)
@@ -73,7 +73,10 @@ console.log(me)
 /* Ex.G 
    Programmatically remove the last skill from the "skills" array inside the "me" object.
 */
-drawHeader("ex. g")
+drawHeader("js basics ex. g")
+
+me.skills.pop()
+console.log(me)
 
 // JS Functions
 /* Ex.1
