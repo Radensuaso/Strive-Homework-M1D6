@@ -82,15 +82,40 @@ console.log(me)
 /* Ex.1
     Write a function called "dice"; it should randomize an integer number between 1 and 6.
 */
+drawHeader("js functions ex. 1")
+const dice = () => Math.ceil(Math.random() * 6)
+
+console.log(dice())
 
 /* Ex.2 
     Write a function called "whoIsBigger" which receives 2 numbers as parameters and returns the biggest one.
 */
+drawHeader("js functions ex. 2")
+
+const whoIsBigger = (num1, num2) => (num1 >= num2 ? num1 : num2)
+console.log(whoIsBigger(6, 30))
 
 /* Ex.3
     Write a function called "splitMe" which receives a string as a parameter and returns an array with every word in that string.
     Ex. splitMe("I love coding") => returns ["I", "Love", "Coding"]
 */
+drawHeader("js functions ex. 3")
+
+const splitMe = (str) =>
+  str
+    .replace(",", "")
+    .replace(".", "")
+    .replace("!", "")
+    .replace("?", "")
+    .replace(";", "")
+    .replace(":", "")
+    .split(" ")
+
+console.log(
+  splitMe(
+    "My favorite food: cake. Any kind of cake, really! Why wouldn't you love cake?"
+  )
+)
 
 /* Ex.4
     Write a function called "deleteOne" which receives a string and a boolean as parameters. If the boolean value is true it should return the string without the first letter, otherwise it should remove the last one from it.
