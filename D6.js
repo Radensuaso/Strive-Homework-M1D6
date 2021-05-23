@@ -132,6 +132,11 @@ console.log(deleteOne("Strive School", true))
    Write a function called "onlyLetters" which receives a string as a parameter and returns it removing all the digits.
    Ex.: onlyLetters("I have 4 dogs")  => returns "I have  dogs"
 */
+drawHeader("js functions ex. 5")
+
+const onlyLetters = (str) => str.replace(/[0-9]/g, "")
+
+console.log(onlyLetters("What's 18 the time 5?"))
 
 /* Ex.6 
    Write a function called "isThisAnEmail" which receives a string as a parameter and returns true if the string is a valid email address.
