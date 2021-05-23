@@ -161,7 +161,7 @@ console.log(isThisAnEmail("andregmail.com"))
 */
 drawHeader("js functions ex. 7")
 
-const whatDayIsIt = function () {
+const whatDayIsIt = () => {
   const now = new Date()
   if (now.getDay() === 0) {
     return "Sunday"
@@ -192,6 +192,21 @@ console.log(whatDayIsIt())
         values: [3, 3, 4]
     }
 */
+drawHeader("js functions ex. 8")
+
+const rollTheDices = (nDices) => {
+  const values = []
+  for (let i = 0; i < nDices; i++) {
+    values.push(dice())
+  }
+  const totalDice = {
+    values: values,
+    sum: values.reduce((a, b) => a + b),
+  }
+  return totalDice
+}
+
+console.log(rollTheDices(6))
 
 /* Ex.9
    Write a function called "howManyDays" which receives a date as a parameter and should return the number of days passed since that date.
