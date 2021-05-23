@@ -161,6 +161,27 @@ console.log(isThisAnEmail("andregmail.com"))
 */
 drawHeader("js functions ex. 7")
 
+const whatDayIsIt = function () {
+  const now = new Date()
+  if (now.getDay() === 0) {
+    return "Sunday"
+  } else if (now.getDay() === 1) {
+    return "Monday"
+  } else if (now.getDay() === 2) {
+    return "Tuesday"
+  } else if (now.getDay() === 3) {
+    return "Wednesday"
+  } else if (now.getDay() === 4) {
+    return "Thursday"
+  } else if (now.getDay() === 5) {
+    return "Friday"
+  } else if (now.getDay() === 6) {
+    return "Saturday"
+  }
+}
+
+console.log(whatDayIsIt())
+
 /* Ex.8
     Write a function called "rollTheDices" which receives a number as a parameter.
     It should invoke the dice() function defined in Ex1 the specified amount of times,
