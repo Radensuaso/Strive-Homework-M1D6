@@ -386,18 +386,25 @@ drawHeader("js Arrays / Objs ex. 12")
 const olderMovie = (objArray) => {
   const olderMovieArray = [objArray[0]] // initialized an array to unshift() to the beginning of it the oldest possible movie in the array of movies
   for (let i = 1; i < objArray.length; i++) {
-    if (objArray[i].Year < olderMoviesArray[0].Year)
-      olderMoviesArray.unshift(objArray[i])
+    if (objArray[i].Year < olderMovieArray[0].Year)
+      olderMovieArray.unshift(objArray[i])
     // with a for loop we can cycle through all the objects and unshift() into the olderMoviesArray array compared with the oldest at moment by Year
   }
 
-  return olderMoviesArray[0] // in the end I just return olderMoviesArray[0] because it will be the oldest possible movie in the olderMovieArray
+  return olderMovieArray[0] // in the end I just return olderMoviesArray[0] because it will be the oldest possible movie in the olderMovieArray
 }
 
 console.log(olderMovie(movies))
 /* Ex.13
     Write a function called "countMovies" which returns the number of movies contained in the array provided at the end of this file.
 */
+drawHeader("js Arrays / Objs ex. 13")
+
+const countMovies = (objArray) =>
+  `There are ${objArray.length} movies in the movies array`
+// we just use the length property to verify the length of the array
+
+console.log(countMovies(movies))
 
 /* Ex.14
     Write a function called "onlyTheTitles" which creates an array with just the titles of the movies provided in the array at the end of the file.
