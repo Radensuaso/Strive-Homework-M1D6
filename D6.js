@@ -540,12 +540,12 @@ const halfTree = (num) => {
   for (let i = 0; i < num; i++) {
     // with a for loop we cycle the number of times defined in the parameter
     drawnTree += "*" + "*".repeat(i) + "\n"
-    // then we start with one star plus i times so it constructs the half tree perfectly according to height
+    // then we start with one star plus i times so it constructs the half tree perfectly according to height, then we change line with \n
   }
   return drawnTree
 }
 
-console.log(halfTree(8))
+console.log(halfTree(6))
 
 /* Ex.22 
   Create a function called "tree" which receives a number as a parameter and builds an "*" tree with the given height.
@@ -556,6 +556,20 @@ console.log(halfTree(8))
   *****
 */
 drawHeader("js Advanced ex. 22")
+
+const tree = (num) => {
+  let drawnTree = "" // Start variable with empty string so it doesn't return unidentified later
+  for (let i = 0; i < num; i++) {
+    // with a for loop we cycle the number of times defined in the parameter
+    drawnTree += " ".repeat(num - i) + "*".repeat(i + 1 + i) + "\n"
+    /* Now for a complete tree it's a bit different from half tree, first we have to spaces according
+    to the height number minus i because the spaces length will be progressively shorter, then we have to add i + 1 + i 
+    because there will always be a star in the middle plus the number of height for each side, then we change line with \n*/
+  }
+  return drawnTree
+}
+
+console.log(tree(8))
 
 /* Ex.23
   Create a function called "isItPrime" that receives a number as a parameter and returns true if the given number is a prime number.
