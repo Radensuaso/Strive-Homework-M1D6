@@ -75,7 +75,7 @@ console.log(me)
 */
 drawHeader("js basics ex. g")
 
-me.skills.pop()
+me.skills.pop() // pop() method eliminates the last element of an array
 console.log(me)
 
 // JS Functions
@@ -83,7 +83,7 @@ console.log(me)
     Write a function called "dice"; it should randomize an integer number between 1 and 6.
 */
 drawHeader("js functions ex. 1")
-const dice = () => Math.ceil(Math.random() * 6)
+const dice = () => Math.ceil(Math.random() * 6) // Math.ceil() to round the dice roll to the nearest top integer
 
 console.log(dice())
 
@@ -92,7 +92,7 @@ console.log(dice())
 */
 drawHeader("js functions ex. 2")
 
-const whoIsBigger = (num1, num2) => (num1 >= num2 ? num1 : num2)
+const whoIsBigger = (num1, num2) => (num1 >= num2 ? num1 : num2) // Used bigger or equal to in case the numbers passed are equal
 console.log(whoIsBigger(6, 30))
 
 /* Ex.3
@@ -108,8 +108,8 @@ const splitMe = (str) =>
     .replace("!", "")
     .replace("?", "")
     .replace(";", "")
-    .replace(":", "")
-    .split(" ")
+    .replace(":", "") // used replace() so the array of words splitted don't have any punctuation
+    .split(" ") // split() to divide the string "where a space is" into an array of words
 
 console.log(
   splitMe(
@@ -123,7 +123,7 @@ console.log(
 drawHeader("js functions ex. 4")
 
 const deleteOne = (str, bool) =>
-  bool ? str.substring(1) : str.substring(0, str.length - 1)
+  bool ? str.substring(1) : str.substring(0, str.length - 1) // used substring to return a section of the string depending on the boolean
 
 console.log(deleteOne("Strive School", false))
 console.log(deleteOne("Strive School", true))
@@ -134,7 +134,7 @@ console.log(deleteOne("Strive School", true))
 */
 drawHeader("js functions ex. 5")
 
-const onlyLetters = (str) => str.replace(/[0-9]/g, "")
+const onlyLetters = (str) => str.replace(/[0-9]/g, "") // used a regular expression "/[0-9]g" to replace() any digits from 0 through 9 in a string
 
 console.log(onlyLetters("What's 18 the time 5?"))
 
@@ -143,15 +143,16 @@ console.log(onlyLetters("What's 18 the time 5?"))
 */
 drawHeader("js functions ex. 6")
 const isThisAnEmail = (email) => {
-  const hasAt = []
+  const hasAt = [] //created an array to push booleans into it
   for (let i = 0; i < email.length; i++) {
     if (email[i] === "@") {
-      hasAt.push(true)
+      // I decided to test if the string has a "@" in it to verify if it's an email
+      hasAt.push(true) // with the for loop, for every char in the string pushed true if there is a "@" in it
     } else {
       hasAt.push(false)
     }
   }
-  return hasAt.includes(true)
+  return hasAt.includes(true) // used includes() to verify if the array asAt has at least one "@" in it, if so it returns true, otherwise returns false
 }
 console.log(isThisAnEmail("andre@gmail.com"))
 console.log(isThisAnEmail("andregmail.com"))
@@ -162,8 +163,9 @@ console.log(isThisAnEmail("andregmail.com"))
 drawHeader("js functions ex. 7")
 
 const whatDayIsIt = () => {
-  const now = new Date()
+  const now = new Date() // with the new Date() we store the date and time at the moment on a now variable
   if (now.getDay() === 0) {
+    // with getDay() it returns numbers from 0 to 6 depending on the day of the week, where 0 is sunday and 6 is saturday
     return "Sunday"
   } else if (now.getDay() === 1) {
     return "Monday"
@@ -176,6 +178,7 @@ const whatDayIsIt = () => {
   } else if (now.getDay() === 5) {
     return "Friday"
   } else if (now.getDay() === 6) {
+    // with an if else statement it will return a string depending on the number
     return "Saturday"
   }
 }
@@ -195,15 +198,17 @@ console.log(whatDayIsIt())
 drawHeader("js functions ex. 8")
 
 const rollTheDices = (nDices) => {
-  const values = []
+  const values = [] // initialized an array to push the dice results
   for (let i = 0; i < nDices; i++) {
+    // for loop to roll the dice() function depending on number of dices passed
     values.push(dice())
   }
   const totalDice = {
+    // an object factory to fabricate the object to return
     values: values,
-    sum: values.reduce((a, b) => a + b),
+    sum: values.reduce((a, b) => a + b), // reduce() with the function (a, b) => a + b passed into it will sum every element in the values array
   }
-  return totalDice
+  return totalDice // in the end I just return the object
 }
 
 console.log(rollTheDices(6))
@@ -214,27 +219,28 @@ console.log(rollTheDices(6))
 drawHeader("js functions ex. 9")
 
 const howManyDays = (date) => {
-  const timeStampDate = new Date(date).getTime()
+  const timeStampDate = new Date(date).getTime() // getTime() used on new Date() will get mee the milliseconds from a specific date
   const timeStampNow = new Date().getTime()
   const daysSinceDate = Math.floor((timeStampNow - timeStampDate) / 86400000)
+  // the difference between the timestamp from now and the date passed divided for 86400000 floored will get me the days between the two dates
   if (daysSinceDate === 0) {
-    return `${date} is today.`
+    return `${date} is today.` // in case the number of days are 0 just return a string saying it is today
   } else if (daysSinceDate < 0) {
-    return `${date} still didn't arrive, choose a date before today.`
+    return `${date} still didn't arrive, choose a date before today.` // in case the date passed is more than today, just ask to put a date form before today
   } else {
-    return `${daysSinceDate} days have passed since ${date}`
+    return `${daysSinceDate} days have passed since ${date}` // in case the date from before just return the apropriate message
   }
 }
 
-console.log(howManyDays("July 4 1776"))
+console.log(howManyDays("July 4 1776")) // You can confirm if it's correct in this site: https://www.timeanddate.com/date/duration.html
 
 /* Ex.10
    Write a function called "isTodayMyBirthday" which should return true if today's your birthday, false otherwise.
 */
 drawHeader("js functions ex. 10")
 const isTodayMyBirthday = () => {
-  const todayDate = new Date().getDate()
-  const todayMonth = new Date().getMonth()
+  const todayDate = new Date().getDate() // new Date().getDate() will get me the number of the day in the month of today
+  const todayMonth = new Date().getMonth() // new Date().getMonth() will get me the number of the the month of today // where 0 is January and 11 is December
   return todayDate === 3 && todayMonth === 7 //My birthday is August 3rd
 }
 
@@ -249,7 +255,7 @@ console.log(isTodayMyBirthday())
 drawHeader("js Arrays / Objs ex. 11")
 
 const deleteProp = (obj, str) => {
-  delete obj[str]
+  delete obj[str] // to delete a property in an object this way we have to use square brackets
   return obj
 }
 console.log(deleteProp({ name: "André", age: 28 }, "age"))
