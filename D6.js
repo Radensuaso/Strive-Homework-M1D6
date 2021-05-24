@@ -574,3 +574,17 @@ console.log(tree(8))
 /* Ex.23
   Create a function called "isItPrime" that receives a number as a parameter and returns true if the given number is a prime number.
 */
+drawHeader("js Advanced ex. 23")
+
+const isItPrime = (num) => {
+  for (let i = 2; i < num; i++) {
+    if (num % i === 0) {
+      return false
+    } else {
+      return num > 1
+    }
+  }
+}
+
+console.log(isItPrime(677))
+/* list of prime numbers https://www.factmonster.com/math-science/mathematics/prime-numbers-facts-examples-table-of-all-up-to-1000#:~:text=To%20prove%20whether%20a%20number,number%20(see%20table%20below). */
