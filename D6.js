@@ -409,6 +409,17 @@ console.log(countMovies(movies))
 /* Ex.14
     Write a function called "onlyTheTitles" which creates an array with just the titles of the movies provided in the array at the end of the file.
 */
+drawHeader("js Arrays / Objs ex. 14")
+
+const onlyTheTitles = (objArray) => {
+  const titles = [] // initialized array to push the titles into it
+  for (const element of objArray) {
+    // with for of syntax we can cycle through the entirety of the movies array
+    titles.push(element.Title) // just push the Titles
+  }
+  return titles // return the titles array
+}
+console.log(onlyTheTitles(movies))
 
 /* Ex.15
    Write a function called "onlyInThisMillennium" which returns only the movies produced in this millennium.
