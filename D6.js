@@ -475,6 +475,17 @@ console.log(sumAllTheYears(movies))
 /* Ex.18
     Write a function called "searchByTitle" which receives a string as a parameter and returns all the movies which contain that string in the title.
 */
+drawHeader("js Arrays / Objs ex. 18")
+const searchByTitle = (str, objArray) => {
+  const arrayOfMoviesWithStr = []
+  for (const element of objArray) {
+    if (element.Title.includes(str)) arrayOfMoviesWithStr.push(element)
+    // for each element in the array I verified if Title string includes() the String passed as parameter, if so push() the element to arrayOfMoviesWithStr
+  }
+  return arrayOfMoviesWithStr
+}
+
+console.log(searchByTitle("Av", movies))
 
 /* Ex.19
     Write a function called "searchAndDivide" which receives a string as a parameter and returns an object;
