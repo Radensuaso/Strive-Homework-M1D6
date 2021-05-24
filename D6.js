@@ -533,6 +533,19 @@ console.log(removeIndex(2, movies))
   **
   ***
 */
+drawHeader("js Advanced ex. 21")
+
+const halfTree = (num) => {
+  let drawnTree = "" // Start variable with empty string so it doesn't return unidentified later
+  for (let i = 0; i < num; i++) {
+    // with a for loop we cycle the number of times defined in the parameter
+    drawnTree += "*" + "*".repeat(i) + "\n"
+    // then we start with one star plus i times so it constructs the half tree perfectly according to height
+  }
+  return drawnTree
+}
+
+console.log(halfTree(8))
 
 /* Ex.22 
   Create a function called "tree" which receives a number as a parameter and builds an "*" tree with the given height.
@@ -542,6 +555,7 @@ console.log(removeIndex(2, movies))
    *** 
   *****
 */
+drawHeader("js Advanced ex. 22")
 
 /* Ex.23
   Create a function called "isItPrime" that receives a number as a parameter and returns true if the given number is a prime number.
