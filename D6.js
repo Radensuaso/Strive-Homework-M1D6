@@ -439,6 +439,24 @@ console.log(onlyInThisMillennium(movies))
 /* Ex.16 
     Write a function called "getMovieById" which receives an id as a parameter and returns the movie with the given id.
 */
+drawHeader("js Arrays / Objs ex. 16")
+
+const getMovieById = (id, objArray) => {
+  let movie // variable to store the movie that matches the id
+  for (const element of objArray) {
+    if (element.imdbID === id) {
+      movie = element
+      break
+    } else {
+      movie = `That's not a valid ID`
+      // when the condition is met break out of the loop so it doesn't give us the `That's not a valid ID` message
+    }
+  }
+  return movie
+}
+
+console.log(getMovieById("tt2395427", movies))
+console.log(getMovieById("tt2415d27", movies))
 
 /* Ex.17
     Write a function called "sumAllTheYears" which returns the sum of all the years in which the movies provided have been produced.
