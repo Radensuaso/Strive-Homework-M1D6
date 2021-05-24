@@ -516,6 +516,13 @@ console.log(searchAndDivide("Lord", movies))
 */
 drawHeader("js Arrays / Objs ex. 20")
 
+const removeIndex = (index, objArray) => {
+  objArray.splice(index, 1) //splice() will mutate the movies array and return it without the element at the index passed as parameter
+  return objArray
+}
+
+console.log(removeIndex(2, movies))
+
 // [EXTRAS] JS Advanced
 
 /* Ex.21
