@@ -461,6 +461,16 @@ console.log(getMovieById("tt2415d27", movies))
 /* Ex.17
     Write a function called "sumAllTheYears" which returns the sum of all the years in which the movies provided have been produced.
 */
+drawHeader("js Arrays / Objs ex. 17")
+
+const sumAllTheYears = (objArray) => {
+  const years = []
+  for (const element of objArray) {
+    years.push(parseInt(element.Year, 10)) // I used PaseInt() to transform the years strings into numbers and pushed every year into the year array
+  }
+  return `The sum of all the years is: ${years.reduce((a, b) => a + b)}` // with reduce I was able to return the sum of all years in the array
+}
+console.log(sumAllTheYears(movies))
 
 /* Ex.18
     Write a function called "searchByTitle" which receives a string as a parameter and returns all the movies which contain that string in the title.
