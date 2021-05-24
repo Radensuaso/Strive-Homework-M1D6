@@ -477,12 +477,12 @@ console.log(sumAllTheYears(movies))
 */
 drawHeader("js Arrays / Objs ex. 18")
 const searchByTitle = (str, objArray) => {
-  const arrayOfMoviesWithStr = []
+  const match = []
   for (const element of objArray) {
-    if (element.Title.includes(str)) arrayOfMoviesWithStr.push(element)
-    // for each element in the array I verified if Title string includes() the String passed as parameter, if so push() the element to arrayOfMoviesWithStr
+    if (element.Title.includes(str)) match.push(element)
+    // for each element in the array I verified if Title string includes() the String passed as parameter, if so push() the element to match
   }
-  return arrayOfMoviesWithStr
+  return match
 }
 
 console.log(searchByTitle("Av", movies))
@@ -492,10 +492,29 @@ console.log(searchByTitle("Av", movies))
     this object should contain an array called "match", made by all the movies which contain the given string in the title,
     and another array "unmatch" with all the remaining ones.
 */
+drawHeader("js Arrays / Objs ex. 19")
+
+const searchAndDivide = (str, objArray) => {
+  const match = []
+  const unmatch = []
+  for (const element of objArray) {
+    element.Title.includes(str) ? match.push(element) : unmatch.push(element)
+    // for each element in the array I verified if Title string includes() the String passed as parameter, if so push() the element to match otherwise to unmatch
+  }
+  const matchUnmatch = {
+    // create an object with Match and Unmatch properties and attribute to them the respective arrays
+    match: match,
+    unmatch: unmatch,
+  }
+  return matchUnmatch // return the object
+}
+
+console.log(searchAndDivide("Lord", movies))
 
 /* Ex.20
    Write a function called "removeIndex" which receives a number as a parameter and returns the movies array without the element in the given position.
 */
+drawHeader("js Arrays / Objs ex. 20")
 
 // [EXTRAS] JS Advanced
 
